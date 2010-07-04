@@ -1,0 +1,9 @@
+h1. Sasuc Canteen Menu viewer
+
+p. A simple url image retriever of sasuc's canteens menu into a _MTKineticList_ of _MTKineticImage_
+
+h3. Restrictions
+
+* It just loads the full week menu (7 days - 1 image/day) if not cached.
+* Static image path
+
