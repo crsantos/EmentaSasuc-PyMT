@@ -8,9 +8,6 @@ import glob,os,urllib
 from PIL import Image
 from datetime import date
 
-# mycss = '*{ bg-color: rgba(155, 155, 155, 150); }'
-# css_add_sheet(mycss)
-
 class Ementa(MTWidget):
     """docstring for Ementa"""
     def __init__(self,  **kargs):
@@ -26,8 +23,6 @@ class Ementa(MTWidget):
                     "Ementa1_Domingo"
                                         ]
         self.label = "LOLOLOLOLOL"                     
-        # self.bg_image = Loader.image(  os.path.join(os.path.dirname(__file__),"images","back.jpg"))
-        # self.bg_image.scale = float(self.width)/self.bg_image.width
         
         for day in days: # only retrieve images not cached
             urllib.urlretrieve(url+day, "images/"+day+".png")
@@ -40,14 +35,7 @@ class Ementa(MTWidget):
         for x in xrange(len(days)):
             for filename in glob.glob(os.path.join(os.path.dirname(__file__), 'images', '*.png')):
                 k.add_widget(MTKineticImage(image=Loader.image(filename))) # adds each image to list
-        self.add_widget(k) # appends widget to main app
-        
-        
-        def draw ():
-            """docstring for on_update ()"""
-            glColor4f(1,0,0,1)
-            drawLabel(self.label, pos=(50,w.height-90), center=False, font_size=60,bold=True, color=(1, 1, 1, .5))
-            
+        self.add_widget(k) # appends widget to main app            
 
 if __name__ == '__main__':
     runTouchApp(Ementa())
