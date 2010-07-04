@@ -14,16 +14,10 @@ class Ementa(MTWidget):
         super(Ementa, self).__init__()
         
         url="http://www.uc.pt/sasuc/ServicosApoioEstudantes/Alimentacao/"
-        days= [     "Ementa2_Segunda",
-                    "Ementa3_Terca",
-                    "Ementa4_Quarta",
-                    "Ementa5_Quinta",
-                    "Ementa6_Sexta",
-                    "Ementa7_Sabado",
-                    "Ementa1_Domingo"
-                                        ]
-        self.label = "LOLOLOLOLOL"                     
-        
+        days= [     "Ementa2_Segunda", "Ementa3_Terca",
+                    "Ementa4_Quarta", "Ementa5_Quinta",
+                    "Ementa6_Sexta", "Ementa7_Sabado", "Ementa1_Domingo" ]                  
+
         for day in days: # only retrieve images not cached
             urllib.urlretrieve(url+day, "images/"+day+".png")
         # build a KineticList
