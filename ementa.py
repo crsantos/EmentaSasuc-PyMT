@@ -40,17 +40,24 @@ class Ementa(MTWidget):
         self.exit_size=35
         self.bg_image = Loader.image("images/back.jpg")
         #self.bg_image.scale = float(self.width)/self.bg_image.width
+
+        #url="http://www.uc.pt/sasuc/ServicosApoioEstudantes/Alimentacao/"
+        url="http://www.uc.pt/sasuc/ServicosApoioEstudantes/Alimentacao/Ementa_III_Trimestre_2010/"
         
-        url="http://www.uc.pt/sasuc/ServicosApoioEstudantes/Alimentacao/"
-        days= [     "Ementa2_Segunda", "Ementa3_Terca",
-                    "Ementa4_Quarta", "Ementa5_Quinta",
-                    "Ementa6_Sexta", "Ementa7_Sabado", "Ementa1_Domingo" ]
+        days= [     "ALI_1_Ementa_III_Trim_2010_2feira.png", "ALI_2_Ementa_III_Trim_2010_3feira.png",
+                    "ALI_3_Ementa_III_Trim_2010_4feira.png", "ALI_4_Ementa_III_Trim_2010_5feira.png",
+                    "ALI_5_Ementa_III_Trim_2010_6feira.png", "ALI_6_Ementa_III_Trim_2010_Sabado.png",
+                    "ALI_7_Ementa_III_Trim_2010_Domingo.png" ]
+
+        # days= [     "Ementa2_Segunda", "Ementa3_Terca",
+        #             "Ementa4_Quarta", "Ementa5_Quinta",
+        #             "Ementa6_Sexta", "Ementa7_Sabado", "Ementa1_Domingo" ]
 
         for day in days: # only retrieve images not cached
             urllib.urlretrieve(url+day, "images/"+day+".png")
 
         # build a KineticList
-        self.k = MTKineticList( size= getWindow().size, friction=1, do_x=True, padding_x=0,
+        self.k = MTKineticList( size= getWindow().size, friction=3, do_x=True, padding_x=5,
                           h_limit=1, do_y=False, title="Ementa Sasuc", deletable=False,
                           searchable=False, w_limit=0,cls=('list'))
         
